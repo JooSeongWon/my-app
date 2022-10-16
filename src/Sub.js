@@ -1,5 +1,5 @@
 import React from 'react';
-
+//rsc 자동완성
 const Sub = () => {
   return (
     <div>
