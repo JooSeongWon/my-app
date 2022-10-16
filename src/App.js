@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 //&& : true면 보여주고 false면 안보여줌
 function App() {
   let sample = [
+    /////asdsads
     { id: 1, name: '활' },
     { id: 2, name: '칼' },
     { id: 3, name: '총' },
