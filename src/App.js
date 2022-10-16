@@ -1,30 +1,33 @@
 import './App.css';
 import React, { useState } from 'react';
-import Sub from './Sub';
 
 //&& : true면 보여주고 false면 안보여줌
 function App() {
-  console.log('App 실행');
-  const [users, setUsers] = useState([]);
+  let sample = [
+    { id: 1, name: '활' },
+    { id: 2, name: '칼' },
+    { id: 3, name: '총' },
+    { id: 4, name: '창' },
+  ];
+
+  console.log('APP 실행됨');
+  const [users, setUsers] = useState(sample);
+  const [num, setNum] = useState(5);
 
   const download = () => {
-    let sample = [
-      { id: 1, name: '홍길동' },
-      { id: 2, name: '임꺽정' },
-      { id: 3, name: '장보고' },
-      { id: 4, name: '코스' },
-    ];
-    setUsers(sample);
+    setUsers([...sample, { id: num, name: '조자룡' }]); //깊은복사로 레퍼런스 변경 -> 한번 더 그림
+    setNum(num + 1);
   };
-
   return (
     <div>
       <button onClick={download}>다운로드</button>
-      {users.map((u) => (
-        <h1>
-          {u.id}.{u.name}
-        </h1>
-      ))}
+      <h1>
+        {users.map((u) => (
+          <h1>
+            {u.id}. {u.name}
+          </h1>
+        ))}
+      </h1>
     </div>
   );
 }
